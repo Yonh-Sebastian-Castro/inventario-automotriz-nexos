@@ -1,59 +1,78 @@
-# InventarioAutomotrizFrontend
+# Inventario Automotriz - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Este proyecto corresponde al **frontend del sistema de inventario automotriz** desarrollado como parte de una prueba técnica para Nexos Software. Está construido con **Angular 17** y se comunica con el backend desarrollado en Spring Boot a través de servicios REST.
 
-## Development server
+## Requisitos previos
 
-To start a local development server, run:
+* Node.js 18+
+* Angular CLI (`npm install -g @angular/cli`)
+* Backend corriendo en `http://localhost:8080` (ver carpeta `inventario-automotriz-backend/`)
+
+## Ejecución del proyecto
+
+1. Instala las dependencias:
+
+```bash
+npm install
+```
+
+2. Ejecuta el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Abre el navegador en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La aplicación se recargará automáticamente al detectar cambios.
 
-```bash
-ng generate --help
-```
+## Estructura principal del frontend
 
-## Building
+* `src/app/components`: Componentes principales como `listar-mercancia`, `registrar-mercancia`, etc.
+* `src/app/services`: Servicios que manejan la comunicación con la API REST (`mercancia.service.ts`)
+* `src/app/models`: Interfaces TypeScript para las entidades (`Usuario`, `Mercancia`, etc.)
 
-To build the project run:
+## Integración con el Backend
 
-```bash
-ng build
-```
+Este frontend espera consumir los siguientes endpoints:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* `GET /api/mercancia`
+* `POST /api/mercancia`
+* `PUT /api/mercancia/{id}`
+* `DELETE /api/mercancia/{id}`
 
-## Running unit tests
+Asegúrate de que el backend esté en ejecución antes de utilizar la aplicación.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Pruebas (opcional)
+
+Este proyecto aún no incluye pruebas unitarias específicas, pero puedes ejecutarlas con:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Comandos útiles
 
-For end-to-end (e2e) testing, run:
+* Generar un componente:
 
 ```bash
-ng e2e
+ng generate component nombre-componente
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Generar un servicio:
 
-## Additional Resources
+```bash
+ng generate service nombre-servicio
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Recursos adicionales
+
+* [Angular CLI – Documentación oficial](https://angular.dev/tools/cli)
+
+---
+
+> Advertencia: Recuerda configurar el CORS del backend en caso de que ejecutes el frontend y backend en puertos diferentes.
