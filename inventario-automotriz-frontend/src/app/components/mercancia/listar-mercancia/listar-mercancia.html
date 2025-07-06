@@ -1,0 +1,78 @@
+<!-- SELECT PARA IDENTIFICAR EL USUARIO -->
+<div class="usuario-selector">
+  <label for="usuarioActual">Selecciona tu usuario:</label>
+  <select [(ngModel)]="usuarioActualId" name="usuarioActual" required>
+    <option [ngValue]="null">-- Selecciona un usuario --</option>
+    <option *ngFor="let u of usuarios" [value]="u.id">
+      {{ u.nombre }} ({{ u.nombreCargo }}) ({{ u.cargoId }})
+    </option>
+  </select>
+</div>
+
+<div style="text-align: center; margin-bottom: 1rem;">
+  <button (click)="irAUsuarios()"
+    style="margin-left: 1rem; background-color: #2196F3; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">
+    🔧 Gestión de Usuarios
+  </button>
+</div>
+
+<h1 class="titulo">Listado de Mercancías</h1>
+
+<!-- BOTÓN PARA REGISTRAR NUEVA MERCANCÍA -->
+<div style="text-align: center; margin-bottom: 1rem;">
+  <button (click)="irARegistrar()" [disabled]="cargando"
+    style="background-color: #4CAF50; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">
+    + Registrar Nueva Mercancía
+  </button>
+</div>
+
+<!-- ESTADO -->
+<div class="estado" *ngIf="cargando">Cargando...</div>
+<div class="estado error" *ngIf="error">{{ error }}</div>
+
+<div class="contenedor">
+  <!-- FORMULARIO DE FILTRO -->
+  <form class="formulario" (ngSubmit)="filtrar()">
+    <h3 class="titulo">Filtrar</h3>
+    <label>Nombre: <input [(ngModel)]="filtro.nombre" name="nombre" /></label>
+    <label>Fecha: <input type="date" [(ngModel)]="filtro.fecha" name="fecha" /></label>
+    <label>Usuario ID: <input type="number" [(ngModel)]="filtro.usuarioId" name="usuarioId" /></label>
+    <div class="botones">
+      <button type="submit">Buscar</button>
+      <button type="button" (click)="resetear()">Limpiar</button>
+    </div>
+  </form>
+
+  <!-- TABLA DE RESULTADOS -->
+  <div style="overflow-x:auto; max-width:100%">
+    <table class="tabla" *ngIf="!cargando && !error">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del articulo</th>
+          <th>Cantidad</th>
+          <th>Fecha Ingreso</th>
+          <th>ID del Usuario que registró</th>
+          <th>Usuario que Modificó</th>
+          <th>Fecha de Modificación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of mercancias">
+          <td>{{ m.id }}</td>
+          <td>{{ m.nombre }}</td>
+          <td>{{ m.cantidad }}</td>
+          <td>{{ m.fechaIngreso }}</td>
+          <td>{{ m.usuarioRegistraId }}</td>
+          <td>{{ m.usuarioModificaId || '---' }}</td>
+          <td>{{ m.fechaModificacion || '---' }}</td>
+          <td>
+            <button (click)="editar(m)" title="Editar mercancía">Editar</button>
+            <button (click)="eliminar(m.id!)" [disabled]="!usuarioActualId">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

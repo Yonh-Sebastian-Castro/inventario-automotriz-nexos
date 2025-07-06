@@ -1,0 +1,56 @@
+<div class="contenedor-formulario">
+  <h2 class="titulo">{{ enEdicion ? 'Editar Mercancía' : 'Registrar Nueva Mercancía' }}</h2>
+
+  <form class="formulario" [formGroup]="form" (ngSubmit)="guardar()" novalidate>
+    <label>
+      Nombre:
+      <input type="text" formControlName="nombre" />
+    </label>
+    <div *ngIf="form.get('nombre')?.touched">
+      <span *ngIf="form.get('nombre')?.hasError('required')" class="error-msg">Nombre requerido</span>
+      <span *ngIf="form.get('nombre')?.hasError('nombreDuplicado')" class="error-msg">Ya existe una mercancía con ese
+        nombre</span>
+    </div>
+
+    <label>
+      Cantidad:
+      <input type="number" formControlName="cantidad" />
+    </label>
+    <div *ngIf="form.get('cantidad')?.touched">
+      <span *ngIf="form.get('cantidad')?.hasError('required')" class="error-msg">Cantidad requerida</span>
+      <span *ngIf="form.get('cantidad')?.hasError('min')" class="error-msg">La cantidad debe ser mayor que cero</span>
+    </div>
+
+    <label>
+      Fecha Ingreso:
+      <input type="date" formControlName="fechaIngreso" />
+    </label>
+    <div *ngIf="form.get('fechaIngreso')?.touched">
+      <span *ngIf="form.get('fechaIngreso')?.hasError('required')" class="error-msg">Fecha requerida</span>
+      <span *ngIf="form.get('fechaIngreso')?.hasError('fechaFutura')" class="error-msg">La fecha no puede ser
+        futura</span>
+    </div>
+
+    <label>
+      Usuario que Registra:
+      <select formControlName="usuarioRegistraId">
+        <option value="">-- Selecciona un usuario --</option>
+        <option *ngFor="let u of usuarios" [value]="u.id">
+          {{ u.nombre }} ({{ u.nombreCargo }})
+        </option>
+      </select>
+    </label>
+
+
+    <div *ngIf="form.get('usuarioRegistraId')?.touched">
+      <span *ngIf="form.get('usuarioRegistraId')?.hasError('required')" class="error-msg">ID requerido</span>
+      <span *ngIf="form.get('usuarioRegistraId')?.hasError('min')" class="error-msg">ID inválido</span>
+    </div>
+
+    <div class="botones">
+      <button type="submit" [disabled]="form.invalid">
+        {{ enEdicion ? 'Actualizar' : 'Registrar' }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,123 @@
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.estado {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.estado.error {
+  color: red;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; /* se adapta en pantallas pequeñas */
+}
+
+.formulario {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+.formulario label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  min-width: 0; /* previene estiramiento en algunos navegadores */
+}
+
+.formulario h3.titulo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.botones button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0077cc;
+  color: white;
+  cursor: pointer;
+}
+
+.botones button:hover {
+  background-color: #005fa3;
+  filter: brightness(1.1);
+}
+
+.tabla {
+  flex: 1;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla th,
+.tabla td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.tabla th {
+  background-color: #f0f0f0;
+}
+
+.usuario-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  padding: 20px;
+  width: 50%;
+  min-width: 280px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.usuario-selector label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.usuario-selector select {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+}
