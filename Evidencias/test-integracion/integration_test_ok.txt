@@ -1,0 +1,50 @@
+15:05:39.897 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nexos.inventario.integration.MercanciaIntegrationTest]: MercanciaIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:05:40.080 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nexos.inventario.InventarioApplication for test class com.nexos.inventario.integration.MercanciaIntegrationTest
+15:05:40.280 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.3)
+
+2025-07-06T15:05:40.618-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] c.n.i.i.MercanciaIntegrationTest         : Starting MercanciaIntegrationTest using Java 21.0.2 with PID 20404 (started by sebas in C:\Users\sebas\OneDrive\Documentos\Yonh Sebastian Pinzon\Procesos de Seleccion EMPRESAS\Proceso de seleccion NEXUS\Prueba tecnica\inventario)
+2025-07-06T15:05:40.619-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] c.n.i.i.MercanciaIntegrationTest         : No active profile set, falling back to 1 default profile: "default"
+2025-07-06T15:05:41.455-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-06T15:05:41.534-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2025-07-06T15:05:42.087-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-06T15:05:42.152-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-06T15:05:42.197-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-06T15:05:42.618-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-06T15:05:42.663-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-06T15:05:42.888-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a2bb026
+2025-07-06T15:05:42.889-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-06T15:05:42.925-05:00  WARN 20404 --- [inventario-automotriz-nexos] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-06T15:05:42.952-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-06T15:05:43.983-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-06T15:05:43.987-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-06T15:05:44.492-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-06T15:05:45.822-05:00  WARN 20404 --- [inventario-automotriz-nexos] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-06T15:05:46.286-05:00  INFO 20404 --- [inventario-automotriz-nexos] [           main] c.n.i.i.MercanciaIntegrationTest         : Started MercanciaIntegrationTest in 6.026 seconds (process running for 7.211)
+Hibernate: select m1_0.id,m1_0.cantidad,m1_0.fecha_ingreso,m1_0.fecha_modificacion,m1_0.nombre,m1_0.usuario_modifica_id,m1_0.usuario_registra_id from mercancia m1_0
+Hibernate: select u1_0.id,u1_0.cargo_id,u1_0.edad,u1_0.fecha_ingreso,u1_0.nombre from usuarios u1_0
+Hibernate: select c1_0.id,c1_0.nombre from cargos c1_0
+Hibernate: delete from cargos where id=?
+Hibernate: delete from cargos where id=?
+Hibernate: delete from cargos where id=?
+Hibernate: insert into cargos (nombre) values (?)
+Hibernate: insert into usuarios (cargo_id,edad,fecha_ingreso,nombre) values (?,?,?,?)
+Hibernate: select m1_0.id from mercancia m1_0 where m1_0.nombre=? fetch first ? rows only
+Hibernate: select u1_0.id,u1_0.cargo_id,c1_0.id,c1_0.nombre,u1_0.edad,u1_0.fecha_ingreso,u1_0.nombre from usuarios u1_0 join cargos c1_0 on c1_0.id=u1_0.cargo_id where u1_0.id=?
+Hibernate: insert into mercancia (cantidad,fecha_ingreso,fecha_modificacion,nombre,usuario_modifica_id,usuario_registra_id) values (?,?,?,?,?,?)
+

@@ -1,0 +1,55 @@
+Scanning for projects...
+
+Some problems were encountered while building the effective model for com.nexos:inventario:jar:0.0.1-SNAPSHOT
+'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-test:jar -> duplicate declaration of version (?) @ line 71, column 21
+
+It is highly recommended to fix these problems because they threaten the stability of your build.
+
+For this reason, future Maven versions might no longer support building such malformed projects.
+
+
+------------------------< com.nexos:inventario >------------------------
+Building inventario 0.0.1-SNAPSHOT
+  from pom.xml
+--------------------------------[ jar ]---------------------------------
+
+--- resources:3.3.1:resources (default-resources) @ inventario ---
+Copying 1 resource from src\main\resources to target\classes
+Copying 0 resource from src\main\resources to target\classes
+
+--- compiler:3.14.0:compile (default-compile) @ inventario ---
+Recompiling the module because of changed source code.
+Compiling 21 source files with javac [debug parameters release 17] to target\classes
+
+--- resources:3.3.1:testResources (default-testResources) @ inventario ---
+skip non existing resourceDirectory C:\Users\sebas\OneDrive\Documentos\Yonh Sebastian Pinzon\Procesos de Seleccion EMPRESAS\Proceso de seleccion NEXUS\Prueba tecnica\inventario\src\test\resources
+
+--- compiler:3.14.0:testCompile (default-testCompile) @ inventario ---
+Recompiling the module because of changed dependency.
+Compiling 3 source files with javac [debug parameters release 17] to target\test-classes
+
+--- surefire:3.5.3:test (default-cli) @ inventario ---
+Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.nexos.inventario.service.MercanciaServiceImplTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\sebas\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.6\byte-buddy-agent-1.17.6.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.396 s -- in com.nexos.inventario.service.MercanciaServiceImplTest
+
+Results:
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  8.641 s
+Finished at: 2025-07-06T14:30:15-05:00
+------------------------------------------------------------------------
